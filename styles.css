@@ -1,0 +1,895 @@
+/* =========================================
+   REFUGE OF HOPE BAPTIST CHURCH
+   MASTER STYLESHEET
+========================================= */
+
+:root{
+
+  --text: #f9fafb;
+  --muted: rgba(255,255,255,.75);
+
+  --accent: #f4c542;
+  --accent-border: #c89b2c;
+  --accent-hover: #e6b937;
+
+  --navy: #0f172a;
+  --navy-light: #1e293b;
+
+  --card-text: #1f2937;
+  --card-muted: #374151;
+
+  --border: rgba(255,255,255,.10);
+
+  --radius: 18px;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+
+  background: #081120;
+
+  color: var(--text);
+
+  line-height: 1.6;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+.container{
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 0 20px;
+}
+
+/* =========================================
+   GLOBAL BACKGROUND
+========================================= */
+
+body::before{
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.72),
+      rgba(0,0,0,.72)
+    ),
+
+    url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+
+  z-index: -2;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header{
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background: rgba(8,17,32,.88);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+  padding: 14px 0;
+}
+
+.header-inner{
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+.logo img{
+
+  height: 90px;
+
+  width: auto;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+.nav a{
+
+  padding: 10px 16px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(245,197,66,.65);
+
+  background:
+    rgba(245,197,66,.16);
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: all .2s ease;
+}
+
+.nav a:hover{
+
+  background:
+    rgba(245,197,66,.32);
+
+  transform: translateY(-2px);
+}
+
+.nav a.active{
+
+  background:
+    rgba(245,197,66,.50);
+
+  border-color:
+    rgba(245,197,66,1);
+}
+
+/* =========================================
+   LANGUAGE BUTTONS
+========================================= */
+
+.lang-toggle{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.lang-btn{
+
+  padding: 6px 10px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid rgba(245,197,66,.65);
+
+  background:
+    rgba(245,197,66,.18);
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all .2s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active{
+
+  background:
+    rgba(245,197,66,.45);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+
+  min-height: 50vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 90px 20px 60px;
+}
+
+/* PERFECT CENTERING */
+.hero .container{
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.hero-inner{
+
+  max-width: 850px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.hero h1,
+.hero-text h1{
+
+  font-size:
+    clamp(2.8rem, 6vw, 5rem);
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  line-height: 1.1;
+
+  text-align: center;
+
+  text-shadow:
+    0 3px 14px rgba(0,0,0,.45);
+}
+
+.hero-address{
+
+  color:
+    rgba(255,255,255,.88);
+
+  margin-bottom: 24px;
+
+  font-size: 2rem;
+
+  text-align: center;
+}
+
+/* GOLD SLOGAN */
+.hero h2,
+.hero-text h2,
+#english-content h2,
+#spanish-content h2{
+
+  font-size:
+    clamp(2rem, 5vw, 3.3rem);
+
+  line-height: 1.2;
+
+  color: var(--accent);
+
+  margin-bottom: 18px;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 12px rgba(0,0,0,.45);
+}
+
+.hero :is(h2,h3),
+.hero-text :is(h2,h3){
+
+  font-size: 1.5rem;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  text-align: center;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.35);
+}
+
+.hero p,
+.hero-text p{
+
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color:
+    rgba(255,255,255,.92);
+
+  font-size: 1.05rem;
+
+  text-align: center;
+}
+
+/* =========================================
+   SMALL HERO
+========================================= */
+
+.hero-small{
+
+  padding: 110px 20px 70px;
+
+  text-align: center;
+}
+
+.hero-small h1{
+
+  font-size:
+    clamp(2.2rem, 5vw, 4rem);
+
+  margin-bottom: 18px;
+
+  color: white;
+
+  text-align: center;
+
+  text-shadow:
+    0 3px 14px rgba(0,0,0,.45);
+}
+
+.hero-small p{
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color:
+    rgba(255,255,255,.88);
+
+  font-size: 1.08rem;
+
+  line-height: 1.8;
+
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero{
+
+  padding: 110px 20px;
+
+  text-align: center;
+}
+
+.page-hero h1{
+
+  font-size:
+    clamp(2.2rem, 5vw, 4rem);
+
+  margin-bottom: 18px;
+}
+
+.hero-subtitle{
+
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  color:
+    rgba(255,255,255,.88);
+
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section{
+  padding: 70px 0;
+}
+
+.hidden{
+  display: none;
+}
+
+/* =========================================
+   CARD SYSTEM
+========================================= */
+
+.info-card,
+.card{
+
+  background:
+    rgba(255,255,255,.96);
+
+  color: var(--card-text);
+
+  border-radius: var(--radius);
+
+  padding: 34px;
+
+  text-align: center;
+
+  min-height: 260px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.22);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.info-card:hover,
+.card:hover{
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.30);
+}
+
+.info-card :is(h2,h3),
+.card :is(h2,h3){
+
+  margin-bottom: 14px;
+
+  color: var(--navy);
+
+  font-size: 1.4rem;
+}
+
+.card-text,
+.info-card p,
+.card p{
+
+  color: var(--card-muted);
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.cta-row{
+
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  margin-top: 24px;
+}
+
+.btn{
+
+  display: inline-block;
+
+  padding: 13px 20px;
+
+  border-radius: 14px;
+
+  border:
+    2px solid var(--accent-border);
+
+  background: var(--accent);
+
+  color: #111111;
+
+  font-weight: 800;
+
+  transition: all .2s ease;
+}
+
+.btn:hover{
+
+  background: var(--accent-hover);
+
+  transform: translateY(-2px);
+}
+
+.btn-secondary{
+
+  background: #f4f4f4;
+
+  border:
+    2px solid #a0a0a0;
+
+  color: #111111;
+}
+
+.btn-secondary:hover{
+  background: #e7e7e7;
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-layout{
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.45fr;
+
+  gap: 34px;
+
+  align-items: stretch;
+
+  margin-top: 40px;
+}
+
+.contact-left{
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 34px;
+
+  height: 100%;
+}
+
+.contact-left .info-card{
+
+  flex: 1;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.form-card{
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  border-radius: var(--radius);
+
+  padding: 28px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.30);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.form-card :is(h2,h3){
+
+  text-align: center;
+
+  color: white;
+
+  margin-bottom: 18px;
+
+  font-size: 1.5rem;
+}
+
+.form-wrapper{
+
+  width: 100%;
+
+  height: 720px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: white;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.22);
+}
+
+.form-wrapper iframe{
+
+  width: 100%;
+
+  height: 720px;
+
+  border: none;
+
+  display: block;
+}
+
+.form-note{
+
+  text-align: center;
+
+  margin-top: 18px;
+
+  color:
+    rgba(255,255,255,.78);
+
+  line-height: 1.7;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer{
+
+  margin-top: 60px;
+
+  padding: 24px 0;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    rgba(0,0,0,.20);
+}
+
+.footer-inner{
+
+  display: flex;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color:
+    rgba(255,255,255,.75);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 950px){
+
+  .contact-layout{
+
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left{
+
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px){
+
+  .header-inner{
+
+    flex-direction: column;
+
+    justify-content: center;
+  }
+
+  .nav{
+
+    justify-content: center;
+  }
+
+  .logo img{
+
+    height: 74px;
+  }
+
+  .hero{
+
+    padding:
+      120px 20px 90px;
+  }
+
+  .page-hero{
+
+    padding:
+      90px 20px;
+  }
+
+  .cta-row{
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .btn{
+
+    width: 100%;
+
+    max-width: 320px;
+
+    text-align: center;
+  }
+
+  .form-wrapper,
+  .form-wrapper iframe{
+
+    height: 760px;
+  }
+
+  .info-card,
+  .card{
+
+    min-height: auto;
+  }
+}
+/* Refined Navy & Gold presentation. Original HTML and wording unchanged. */
+:root{--accent:#dfbd77;--accent-border:#c89b2c;--accent-hover:#efcf89;--card-text:#f1f5f9;--card-muted:#cbd5e1;--radius:6px}
+body{position:relative;isolation:isolate;line-height:1.7}
+body::before{z-index:0;pointer-events:none}
+body>main,body>.hero,body>.section,body>.site-footer{position:relative;z-index:1}
+.site-header{background:rgba(13,33,57,.94);padding:12px 0;z-index:1000}
+.container{max-width:1140px}
+.logo img{height:64px;border-radius:50%}
+.nav{gap:14px}
+.nav a{background:transparent;border-color:transparent;border-radius:3px;font-size:.9rem;padding:9px 12px;font-weight:500}
+.nav a:hover{background:rgba(223,189,119,.12);transform:none}
+.nav a.active{background:transparent;color:#dfbd77;border-color:rgba(223,189,119,.5)}
+.lang-btn{border-radius:3px;font:inherit;font-size:.8rem}
+.lang-btn.active{background:#dfbd77;color:#10243c}
+.hero{min-height:0;padding:76px 20px 48px}
+.hero h1,.hero h2,.hero-small h1,.page-hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.035em}
+.hero h2{font-size:clamp(2.6rem,6vw,5rem);line-height:1.12;color:#dfbd77}
+.hero-small{padding:64px 20px 30px}
+.hero-small h1{font-size:clamp(2.4rem,5vw,4rem)}
+.hero-small p{line-height:1.75}
+.section{padding:30px 0}
+.info-card,.card,.form-card{background:rgba(15,23,42,.88);color:#f1f5f9;height:auto;min-height:0;max-height:none;border:1px solid rgba(200,155,44,.5);padding:18px 24px;box-shadow:0 5px 18px rgba(0,0,0,.2);justify-content:flex-start}
+.info-card,.card{width:100%;max-width:800px;margin-left:auto;margin-right:auto}
+.info-card :is(h2,h3),.card :is(h2,h3),.church-clock h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#dfbd77;font-size:1.6rem;line-height:1.3;margin-bottom:8px}
+.info-card p,.card p,.belief-list{color:#cbd5e1;line-height:1.7}
+.info-card:hover,.card:hover{transform:none}
+.about-card+.about-card{margin-top:18px}
+.info-card+br{display:none}
+.info-card+br+.info-card{margin-top:18px}
+.belief-list{max-width:680px;margin:0 auto;padding-left:22px;text-align:left}
+.belief-list li+li{margin-top:5px}
+.btn{border-radius:3px;background:#dfbd77;border-color:#c89b2c;padding:11px 20px;font-size:.9rem;font-weight:700}
+.btn-secondary{background:rgba(255,255,255,.06);color:#f1f5f9;border-color:rgba(223,189,119,.6)}
+.btn-secondary:hover{background:rgba(223,189,119,.15)}
+.cta-row{margin-top:16px;gap:12px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);align-items:start;gap:24px;margin-top:28px}
+.contact-left{height:auto}.contact-left .info-card{flex:initial;max-width:100%}.contact-right,.contact-left{min-width:0}
+.contact-divider{border:0;border-top:1px solid rgba(200,155,44,.4);margin:18px 0}
+.form-wrapper,.form-wrapper iframe{height:950px}
+.site-footer{margin-top:30px;background:rgba(11,30,52,.9)}
+.pastor-photo{max-width:280px;margin:0 auto 15px}
+:focus-visible{outline:3px solid #dfbd77;outline-offset:4px}
+@media(max-width:950px){.contact-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:768px){.site-header{position:relative}.header-inner{gap:12px}.logo img{height:58px}.nav{gap:6px}.nav a{font-size:.85rem;padding:8px 10px}.nav>div:not(.hidden){display:flex;justify-content:center;flex-wrap:wrap;gap:6px}.hero{padding:48px 5px 30px}.hero-small{padding:40px 0 24px}.section{padding:24px 0}.info-card,.card,.form-card{padding:14px 16px}.hero :is(h2,h3){font-size:1.2rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Pastor/family photograph left; complete original welcome right. */
+.pastor-section{max-width:1040px;display:grid;grid-template-columns:minmax(230px,.85fr) minmax(0,1.3fr);column-gap:40px;row-gap:12px;padding:30px;align-items:center;text-align:left}
+.pastor-family-photo{grid-column:1;grid-row:1 / 3;min-height:340px;align-self:stretch;background:rgba(30,41,59,.75);border:1px solid rgba(200,155,44,.5);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:#cbd5e1}
+.pastor-family-photo>span{font-size:72px;color:#dfbd77;opacity:.65}
+.pastor-family-photo small{font-size:.85rem;max-width:210px}
+.pastor-section>:is(h2,h3){grid-column:2;align-self:end;margin-bottom:0;font-size:2rem}
+.pastor-section>p{grid-column:2;align-self:start}
+@media(max-width:768px){.pastor-section{grid-template-columns:minmax(0,1fr);padding:18px;row-gap:18px}.pastor-family-photo{grid-column:1;grid-row:auto;min-height:240px}.pastor-section>:is(h2,h3),.pastor-section>p{grid-column:1}.pastor-section>:is(h2,h3){font-size:1.7rem}}
+
+/* Approved original photograph: full image, without cropping or alteration. */
+.pastor-family-photo{padding:0;min-height:0;align-self:center;overflow:hidden;background:transparent}
+.pastor-family-photo img{display:block;width:100%;height:auto;max-width:100%}
+@media(max-width:768px){.pastor-family-photo{min-height:0;width:100%;max-width:340px;justify-self:center}}
+
+/* Compact portrait height; retain the full photograph without cropping. */
+.pastor-family-photo{height:auto;max-height:400px;width:auto;max-width:100%;justify-self:center}
+.pastor-family-photo img{width:auto;height:auto;max-height:400px;max-width:100%;object-fit:contain}
+@media(max-width:768px){.pastor-family-photo{width:auto;max-height:320px}.pastor-family-photo img{max-height:320px;width:auto}}
+
+/* Closer portrait framing inside the existing left-hand box; source photo unchanged. */
+.pastor-family-photo{width:100%;height:430px;max-height:none;max-width:100%;justify-self:stretch;align-self:center}
+.pastor-family-photo img{width:100%;height:100%;max-height:none;max-width:100%;object-fit:cover;object-position:50% 38%}
+@media(max-width:768px){.pastor-family-photo{width:100%;height:390px;max-height:none;max-width:340px;justify-self:center}.pastor-family-photo img{width:100%;height:100%;max-height:none;object-fit:cover;object-position:50% 38%}}
+
+/* Move the visible frame downward to remove more space above the couple. */
+.pastor-family-photo img{object-position:50% 60%}
+
+/* Restore headroom after the lower framing trial. */
+.pastor-family-photo img{object-position:50% 43%}
+
+/* Gentler framing with a little more headroom. */
+.pastor-family-photo img{object-position:50% 40%}
+
+/* Slightly less headroom; modest adjustment from 40%, below the 60% trial. */
+.pastor-family-photo img{object-position:50% 45%}
+
+/* Small framing adjustment: 45% to 47%. */
+.pastor-family-photo img{object-position:50% 47%}
+
+/* Small framing adjustment: 47% to 49%. */
+.pastor-family-photo img{object-position:50% 49%}
+
+/* Mission 5E: accessible heading semantics retain the approved visual treatment. */
+.hero h1#hero-title{font-size:clamp(2.6rem,6vw,5rem);line-height:1.12;color:#dfbd77;margin-bottom:18px;font-weight:400;letter-spacing:-.035em}
+/* Improve tap areas without changing colors, card sizes or photograph framing. */
+.nav a,.lang-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.lang-btn{min-width:44px}
+
+/* Keep the original welcome subtitle appearance after semantic heading correction. */
+.hero #hero-subtitle{font-family:inherit;font-weight:700;letter-spacing:normal;font-size:1.5rem;line-height:1.7;color:white;margin-bottom:12px}
+@media(max-width:768px){.hero #hero-subtitle{font-size:1.2rem}}
+
+/* Retain ministry-card typography: existing language-container h2 rules are for large section headings. */
+#english-content .info-card h2,#spanish-content .info-card h2{font-size:1.6rem;line-height:1.3;font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:normal;margin-bottom:8px;text-shadow:none}
+
+/* Mission 5G: show the complete temporary solo portrait inside the approved frame. */
+#pastor-family-image{object-fit:contain;object-position:center}
